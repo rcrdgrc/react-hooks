@@ -4,7 +4,7 @@ import './index.css';
 
 function App() {
   const [name, setName] = useState("Jan");
-  const [admin, setAdmin] = useState(false);
+  const [isAdmin, setisAdmin] = useState(false);
 
   useEffect(() => {
     document.title = `Celebrate ${name}`;
@@ -12,8 +12,8 @@ function App() {
   },[name]);
 
   useEffect(() => {
-    console.log(`The user is: ${admin ? "admin" : "not admin"}`)
-  }, [admin]);
+    console.log(`The user is: ${isAdmin ? "Admin" : "not Admin"}`)
+  }, [isAdmin]);
 
   return (
     <section>
@@ -21,8 +21,8 @@ function App() {
       <button onClick={() => setName("Will")} >
         Change Winner
       </button>
-      <p>{admin ? "logged in" : "not logged in"}</p>
-      <button onClick={() => setAdmin(!admin)} >
+      <p>{isAdmin ? "logged in" : "not logged in"}</p>
+      <button onClick={() => setisAdmin(!isAdmin)} >
         Log In
       </button>
     </section>
